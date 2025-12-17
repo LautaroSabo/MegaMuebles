@@ -1,11 +1,11 @@
-import '/style.css'
+import './style.css'
 
 let allProducts = [];
 let cart = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('/MegaMuebles/productos.json');
+        const response = await fetch('productos.json');
         allProducts = await response.json();
 
         // Initial Render (Home)
@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Setup Search
         setupSearch();
 
+        // Setup Mobile Menu
+        setupMobileMenu();
+
     } catch (error) {
         console.error('Error loading products:', error);
     }
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function setupSearch() {
     const searchToggle = document.getElementById('search-toggle');
     const searchInput = document.getElementById('search-input');
+    const searchContainer = document.getElementById('search-container');
     const productsView = document.getElementById('products-view');
     const homeView = document.getElementById('home-view');
     const navProducts = document.getElementById('nav-products');
@@ -41,20 +45,52 @@ function setupSearch() {
     // Toggle Search Bar
     searchToggle.addEventListener('click', () => {
         if (searchInput.classList.contains('w-0')) {
+            // Open
             searchInput.classList.remove('w-0', 'opacity-0');
             searchInput.classList.add('w-48', 'opacity-100');
+
+            // Mobile specific: expand container to full width and fixed position
+            if (window.innerWidth < 768) {
+                searchInput.classList.remove('w-48');
+                searchInput.classList.add('w-full');
+
+                searchContainer.classList.remove('absolute', 'right-0');
+                searchContainer.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'h-20', 'bg-white', 'z-40', 'px-6', 'flex', 'items-center');
+
+                // Hide the toggle button (magnifying glass)
+                searchToggle.classList.add('hidden');
+            }
+
             searchInput.focus();
         } else {
-            searchInput.classList.remove('w-48', 'opacity-100');
+            // Close
+            searchInput.classList.remove('w-48', 'opacity-100', 'w-full');
             searchInput.classList.add('w-0', 'opacity-0');
+
+            // Reset mobile styles
+            searchContainer.classList.add('absolute', 'right-0');
+            searchContainer.classList.remove('fixed', 'top-0', 'left-0', 'w-full', 'h-20', 'bg-white', 'z-40', 'px-6', 'flex', 'items-center');
+
+            // Show the toggle button again
+            searchToggle.classList.remove('hidden');
         }
     });
 
     // Close search when clicking outside
     document.addEventListener('click', (e) => {
-        if (!searchToggle.contains(e.target) && !searchInput.contains(e.target)) {
-            searchInput.classList.remove('w-48', 'opacity-100');
+        if (!searchToggle.contains(e.target) && !searchContainer.contains(e.target)) {
+            searchInput.classList.remove('w-48', 'opacity-100', 'w-full');
             searchInput.classList.add('w-0', 'opacity-0');
+
+            // Reset mobile styles
+            searchContainer.classList.add('absolute', 'right-0');
+            searchContainer.classList.remove('fixed', 'top-0', 'left-0', 'w-full', 'h-20', 'bg-white', 'z-40', 'px-6', 'flex', 'items-center');
+
+            // Show the toggle button again
+            searchToggle.classList.remove('hidden');
+
+            // Show the toggle button again
+            searchToggle.classList.remove('hidden');
         }
     });
 
@@ -151,6 +187,45 @@ function setupFilters() {
         });
     });
 }
+
+function setupMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const searchWrapper = document.getElementById('search-wrapper');
+    const links = menu.querySelectorAll('a');
+
+    const openMenu = () => {
+        menu.classList.remove('translate-x-full');
+        btn.classList.add('hidden'); // Hide hamburger
+        if (searchWrapper) searchWrapper.classList.add('hidden'); // Hide entire search container
+    };
+
+    const closeMenu = () => {
+        menu.classList.add('translate-x-full');
+        btn.classList.remove('hidden'); // Show hamburger
+        if (searchWrapper) searchWrapper.classList.remove('hidden'); // Show entire search container
+    };
+
+    btn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Close menu when link is clicked
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+
+            // Handle navigation logic if needed (reuse setupNavigation logic)
+            if (link.id === 'mobile-nav-home') {
+                document.getElementById('nav-home').click();
+            } else if (link.id === 'mobile-nav-products') {
+                document.getElementById('nav-products').click();
+            }
+        });
+    });
+}
+
+
 
 // --- Cart & Modal Logic ---
 

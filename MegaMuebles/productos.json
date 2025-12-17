@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "Sofá Minimalista Zen",
+        "price": 599.99,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Sofa+Zen",
+        "tag": "oferta",
+        "category": "living",
+        "description": "Sofá de diseño japonés con líneas limpias y confort superior."
+    },
+    {
+        "id": 2,
+        "name": "Mesa de Centro Nube",
+        "price": 149.50,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Mesa+Nube",
+        "tag": "mas_vendido",
+        "category": "living",
+        "description": "Mesa orgánica de madera clara, perfecta para espacios modernos."
+    },
+    {
+        "id": 3,
+        "name": "Silla Eames Moderna",
+        "price": 89.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Silla+Eames",
+        "tag": "nuevo",
+        "category": "living",
+        "description": "Réplica de alta calidad con acabados premium."
+    },
+    {
+        "id": 4,
+        "name": "Lámpara de Pie Arco",
+        "price": 120.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Lampara+Arco",
+        "tag": "oferta",
+        "category": "living",
+        "description": "Iluminación ambiental con diseño curvo elegante."
+    },
+    {
+        "id": 5,
+        "name": "Estantería Modular",
+        "price": 250.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Estanteria",
+        "tag": "mas_vendido",
+        "category": "living",
+        "description": "Sistema de almacenamiento flexible y decorativo."
+    },
+    {
+        "id": 6,
+        "name": "Escritorio Studio",
+        "price": 300.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Escritorio",
+        "tag": "nuevo",
+        "category": "living",
+        "description": "Escritorio compacto ideal para home office."
+    },
+    {
+        "id": 7,
+        "name": "Sillón de Lectura",
+        "price": 180.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Sillon",
+        "tag": "oferta",
+        "category": "living",
+        "description": "Comodidad absoluta para tus momentos de relax."
+    },
+    {
+        "id": 8,
+        "name": "Cama Flotante",
+        "price": 750.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Cama+Flotante",
+        "tag": "mas_vendido",
+        "category": "camas",
+        "description": "Diseño innovador que da sensación de amplitud."
+    },
+    {
+        "id": 9,
+        "name": "Mesa de Comedor Roble",
+        "price": 450.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Mesa+Comedor",
+        "tag": "nuevo",
+        "category": "living",
+        "description": "Robustez y elegancia para tus cenas."
+    },
+    {
+        "id": 10,
+        "name": "Aparador Vintage",
+        "price": 320.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Aparador",
+        "tag": "oferta",
+        "category": "living",
+        "description": "Toque retro con funcionalidad moderna."
+    },
+    {
+        "id": 11,
+        "name": "Ropero Minimalista White",
+        "price": 850.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Ropero+White",
+        "tag": "nuevo",
+        "category": "roperos",
+        "description": "Armario espacioso con acabado blanco mate."
+    },
+    {
+        "id": 12,
+        "name": "Ropero Industrial",
+        "price": 920.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Ropero+Industrial",
+        "tag": "mas_vendido",
+        "category": "roperos",
+        "description": "Estructura de metal y madera para un look urbano."
+    },
+    {
+        "id": 13,
+        "name": "Cama King Size Velvet",
+        "price": 1100.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Cama+Velvet",
+        "tag": "nuevo",
+        "category": "camas",
+        "description": "Cabecera de terciopelo y estructura reforzada."
+    },
+    {
+        "id": 14,
+        "name": "Peinadora Hollywood",
+        "price": 420.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Peinadora",
+        "tag": "oferta",
+        "category": "peinadoras",
+        "description": "Espejo con luces LED integradas y cajones organizadores."
+    },
+    {
+        "id": 15,
+        "name": "Tocador Escandinavo",
+        "price": 280.00,
+        "image_url": "https://placehold.co/600x400/e2e8f0/1e293b?text=Tocador",
+        "tag": "nuevo",
+        "category": "peinadoras",
+        "description": "Diseño nórdico simple y funcional."
+    }
+]

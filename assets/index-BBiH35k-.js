@@ -2,7 +2,7 @@
 
 `,e=0;c.forEach(n=>{const o=n.price*n.quantity;t+=`- ${n.quantity}x ${n.name} ($${n.price}) = $${o}
 `,e+=o}),t+=`
-*Total: $${e.toFixed(2)}*`;const s=encodeURIComponent(t);window.open(`https://wa.me/?text=${s}`,"_blank")},document.getElementById("cart-btn").addEventListener("click",toggleCart)}function w(t,e){const s=c.find(n=>n.id===t.id);s?s.quantity+=e:c.push({...t,quantity:e}),m()}function m(){const t=document.getElementById("cart-items"),e=document.getElementById("cart-badge"),s=document.getElementById("cart-total"),n=c.reduce((a,i)=>a+i.quantity,0);e.textContent=n,n>0?e.classList.remove("hidden"):e.classList.add("hidden"),t.innerHTML="";let o=0;c.length===0?t.innerHTML=`
+*Total: $${e.toFixed(2)}*`;const s=encodeURIComponent(t);window.open(`https://wa.me/5493644729147?text=${s}`,"_blank")},document.getElementById("cart-btn").addEventListener("click",toggleCart)}function w(t,e){const s=c.find(n=>n.id===t.id);s?s.quantity+=e:c.push({...t,quantity:e}),m()}function m(){const t=document.getElementById("cart-items"),e=document.getElementById("cart-badge"),s=document.getElementById("cart-total"),n=c.reduce((a,i)=>a+i.quantity,0);e.textContent=n,n>0?e.classList.remove("hidden"):e.classList.add("hidden"),t.innerHTML="";let o=0;c.length===0?t.innerHTML=`
             <div class="text-center text-gray-500 py-12">
                 <p>Tu carrito está vacío.</p>
                 <button onclick="toggleCart()" class="mt-4 text-xs font-bold uppercase tracking-widest text-black border-b border-black pb-1">Seguir comprando</button>
